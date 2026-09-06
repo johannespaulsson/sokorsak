@@ -18,6 +18,8 @@
         <label for="templateSelect"><strong>Välj mall:</strong></label>
         <select id="templateSelect">
           <option value="brostsmarta" selected>Bröstsmärta (OPQRST)</option>
+          <option value="yrsel">Yrsel (HINTS & Neuro)</option>
+          <option value="huvudvark">Huvudvärk (SOCRATES)</option>
           <option value="generell">Generell / Akut (ABCDE)</option>
         </select>
         <button class="btn btn-primary" onclick="window.print()">🖨️ Skriv ut A4</button>
@@ -35,7 +37,7 @@
       <!-- Patienthuvud / Header -->
       <header class="sheet-header">
         <div class="header-main">
-          <h2>BRÖSTSMÄRTA <span class="header-sub">— ANAMNES & STATUS</span></h2>
+          <h2>BRÖSTSMÄRTA <span class="header-sub">— SKRIV TYDLIGT!</span></h2>
         </div>
         <div class="patient-box">
           <div class="patient-field pnr-field">
@@ -121,10 +123,10 @@
         </div>
       </section>
 
-      <!-- 2. ASSOCIERADE SYMTOM & VEGETATIV PÅVERKAN -->
+      <!-- 2. ASSOCIERADE SYMTOM & SPECIFIKA RISKER -->
       <section class="form-section">
         <div class="section-title">
-          <h3>2. ASSOCIERADE SYMTOM & VEGETATIV PÅVERKAN</h3>
+          <h3>2. ASSOCIERADE SYMTOM & RÖDA FLAGGOR</h3>
         </div>
         <div class="cue-checklist">
           <span class="check-cue"><span class="box"></span> Dyspné (akut?)</span>
@@ -133,30 +135,32 @@
           <span class="check-cue"><span class="box"></span> Palpitationer / Arytmi</span>
           <span class="check-cue"><span class="box"></span> Synkope / Presynkope</span>
           <span class="check-cue"><span class="box"></span> Hosta / Hemoptys</span>
-          <span class="check-cue"><span class="box"></span> Feber / Infektionstecken</span>
+          <span class="check-cue"><span class="box"></span> Känd Angina / Infarkt</span>
+          <span class="check-cue"><span class="box"></span> Tid. PCI / CABG</span>
+          <span class="check-cue"><span class="box"></span> VTE-risk (immobil/p-piller)</span>
           <span class="check-cue"><span class="box"></span> Reflux / Halsbränna</span>
-          <span class="check-cue"><span class="box"></span> Ensidig bensvullnad (DVT)</span>
+          <span class="check-cue"><span class="box"></span> Ensidig bensvullnad</span>
         </div>
       </section>
 
-      <!-- 3. FYRA BAKGRUNDSRUTOR -->
+      <!-- 3. FYRA STANDARDISERADE BAKGRUNDSRUTOR -->
       <section class="form-section grid-quad-section">
         <div class="quad-col">
           <div class="section-title">
-            <h3>3. TIDIGARE SJUKDOMAR & RISKFAKTORER</h3>
+            <h3>3. TIDIGARE SJUKDOMAR & OPERATIONER</h3>
           </div>
           <div class="cue-checklist mini-boxes">
-            <span class="check-cue"><span class="box"></span> Kranskärlssjd/Angina</span>
-            <span class="check-cue"><span class="box"></span> Infarkt</span>
-            <span class="check-cue"><span class="box"></span> PCI/CABG</span>
-            <span class="check-cue"><span class="box"></span> Svikt</span>
-            <span class="check-cue"><span class="box"></span> Flimmer</span>
             <span class="check-cue"><span class="box"></span> Hypertoni</span>
             <span class="check-cue"><span class="box"></span> Diabetes</span>
-            <span class="check-cue"><span class="box"></span> Kolesterol</span>
+            <span class="check-cue"><span class="box"></span> Hjärt-kärlsjd</span>
+            <span class="check-cue"><span class="box"></span> Hjärtsvikt</span>
+            <span class="check-cue"><span class="box"></span> Flimmer/Arytmi</span>
+            <span class="check-cue"><span class="box"></span> Stroke/TIA</span>
             <span class="check-cue"><span class="box"></span> KOL/Astma</span>
-            <span class="check-cue"><span class="box"></span> VTE/LE</span>
-            <span class="check-cue"><span class="box"></span> Ulcus/Reflux</span>
+            <span class="check-cue"><span class="box"></span> Njur-/Leversjd</span>
+            <span class="check-cue"><span class="box"></span> Malignitet</span>
+            <span class="check-cue"><span class="box"></span> VTE/Trombos</span>
+            <span class="check-cue"><span class="box"></span> Ulcus/GI</span>
             <span class="check-cue"><span class="box"></span> Hereditet</span>
           </div>
           <div class="writing-area">
@@ -187,25 +191,37 @@
           <div class="status-rows quad-rows">
             <div class="status-row">
               <div class="status-lbl-block">
-                <strong>Rökning:</strong> <span class="status-hints">Icke/Tidigare/Aktiv (pkt-år):</span>
+                <strong>Tobak:</strong>
+                <span class="check-cue"><span class="box"></span> Icke</span>
+                <span class="check-cue"><span class="box"></span> Tid.</span>
+                <span class="check-cue"><span class="box"></span> Aktiv (pkt-år: __)</span>
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
             <div class="status-row">
               <div class="status-lbl-block">
-                <strong>Alkohol:</strong> <span class="status-hints">Riskbruk / vanor:</span>
+                <strong>Alkohol:</strong>
+                <span class="check-cue"><span class="box"></span> Nykter</span>
+                <span class="check-cue"><span class="box"></span> Måttlig</span>
+                <span class="check-cue"><span class="box"></span> Riskbruk</span>
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
             <div class="status-row">
               <div class="status-lbl-block">
-                <strong>Socialt:</strong> <span class="status-hints">Boende, yrke, hemsituation:</span>
+                <strong>Socialt:</strong>
+                <span class="check-cue"><span class="box"></span> Eget boende</span>
+                <span class="check-cue"><span class="box"></span> SÄBO</span>
+                <span class="check-cue"><span class="box"></span> Hemtjänst</span>
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
             <div class="status-row">
               <div class="status-lbl-block">
-                <strong>Övrigt:</strong> <span class="status-hints">Droger / vardagsfunktion:</span>
+                <strong>Övrigt:</strong>
+                <span class="check-cue"><span class="box"></span> Yrkesarb.</span>
+                <span class="check-cue"><span class="box"></span> Sjukskr./Pens.</span>
+                <span class="check-cue"><span class="box"></span> Droger</span>
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
@@ -327,14 +343,634 @@
 
 
     <!-- ====================================================
-         MALL 2: GENERELL / AKUT (ABCDE)
+         MALL 2: YRSEL (HINTS & NEUROLOGI)
+         ==================================================== -->
+    <article class="a4-sheet template-sheet hidden" id="sheet-yrsel">
+      
+      <!-- Patienthuvud / Header -->
+      <header class="sheet-header">
+        <div class="header-main">
+          <h2>YRSEL <span class="header-sub">— SKRIV TYDLIGT!</span></h2>
+        </div>
+        <div class="patient-box">
+          <div class="patient-field pnr-field">
+            <span class="lbl">Patient / Pnr:</span>
+            <div class="handwrite-line"></div>
+          </div>
+          <div class="patient-field age-field">
+            <span class="lbl">Ålder / Kön:</span>
+            <div class="handwrite-line"></div>
+          </div>
+          <div class="patient-field date-field">
+            <span class="lbl">Datum / Tid:</span>
+            <div class="handwrite-line"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 1. YRSELANAMNES & AKUELLT -->
+      <section class="form-section">
+        <div class="section-title">
+          <h3>1. YRSELANAMNES & KARAKTÄR</h3>
+          <span class="cues-summary">Debut • Duration • Utlösande faktorer</span>
+        </div>
+        
+        <div class="status-rows">
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Karaktär:</strong>
+              <span class="check-cue"><span class="box"></span> Rotatorisk (karusell)</span>
+              <span class="check-cue"><span class="box"></span> Nautisk (gungande)</span>
+              <span class="check-cue"><span class="box"></span> Ostadighet</span>
+              <span class="check-cue"><span class="box"></span> Presynkope/svimning</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Duration:</strong>
+              <span class="check-cue"><span class="box"></span> Sekunder (&lt;1 min)</span>
+              <span class="check-cue"><span class="box"></span> Min-timmar</span>
+              <span class="check-cue"><span class="box"></span> Dagar-veckor (konstant)</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Utlösande:</strong>
+              <span class="check-cue"><span class="box"></span> Lägesändring/vrida huvud</span>
+              <span class="check-cue"><span class="box"></span> Uppresning</span>
+              <span class="check-cue"><span class="box"></span> Ansträngning</span>
+              <span class="check-cue"><span class="box"></span> Spontant i vila</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+        </div>
+
+        <div class="writing-area extra-anamnes">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </section>
+
+      <!-- 2. ASSOCIERADE SYMTOM & RÖDA FLAGGOR -->
+      <section class="form-section">
+        <div class="section-title">
+          <h3>2. ASSOCIERADE SYMTOM & RÖDA FLAGGOR</h3>
+        </div>
+        <div class="cue-checklist">
+          <span class="check-cue"><span class="box"></span> Illamående / Kräkning</span>
+          <span class="check-cue"><span class="box"></span> Diplopi (Dubbelseende)</span>
+          <span class="check-cue"><span class="box"></span> Dysartri / Talstörning</span>
+          <span class="check-cue"><span class="box"></span> Dysfagi</span>
+          <span class="check-cue"><span class="box"></span> Ataxi / Balanssvikt</span>
+          <span class="check-cue"><span class="box"></span> Pares / Domning</span>
+          <span class="check-cue"><span class="box"></span> Hörselnedsättning / Tinnitus / Lock</span>
+          <span class="check-cue"><span class="box"></span> Känd BPPV / Öronsjukdom</span>
+          <span class="check-cue"><span class="box"></span> Tid. Stroke / TIA</span>
+          <span class="check-cue"><span class="box"></span> Huvudvärk / Nacksmärta</span>
+          <span class="check-cue"><span class="box"></span> Palpitationer / Bröstsmärta</span>
+        </div>
+      </section>
+
+      <!-- 3. FYRA STANDARDISERADE BAKGRUNDSRUTOR -->
+      <section class="form-section grid-quad-section">
+        <div class="quad-col">
+          <div class="section-title">
+            <h3>3. TIDIGARE SJUKDOMAR & OPERATIONER</h3>
+          </div>
+          <div class="cue-checklist mini-boxes">
+            <span class="check-cue"><span class="box"></span> Hypertoni</span>
+            <span class="check-cue"><span class="box"></span> Diabetes</span>
+            <span class="check-cue"><span class="box"></span> Hjärt-kärlsjd</span>
+            <span class="check-cue"><span class="box"></span> Hjärtsvikt</span>
+            <span class="check-cue"><span class="box"></span> Flimmer/Arytmi</span>
+            <span class="check-cue"><span class="box"></span> Stroke/TIA</span>
+            <span class="check-cue"><span class="box"></span> KOL/Astma</span>
+            <span class="check-cue"><span class="box"></span> Njur-/Leversjd</span>
+            <span class="check-cue"><span class="box"></span> Malignitet</span>
+            <span class="check-cue"><span class="box"></span> VTE/Trombos</span>
+            <span class="check-cue"><span class="box"></span> Ulcus/GI</span>
+            <span class="check-cue"><span class="box"></span> Hereditet</span>
+          </div>
+          <div class="writing-area">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <div class="quad-col">
+          <div class="section-title">
+            <h3>4. AKTUELLA LÄKEMEDEL</h3>
+          </div>
+          <div class="writing-area">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <div class="quad-col">
+          <div class="section-title">
+            <h3>5. TOBAK, ALKOHOL & SOCIALT</h3>
+          </div>
+          <div class="status-rows quad-rows">
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Tobak:</strong>
+                <span class="check-cue"><span class="box"></span> Icke</span>
+                <span class="check-cue"><span class="box"></span> Tid.</span>
+                <span class="check-cue"><span class="box"></span> Aktiv (pkt-år: __)</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Alkohol:</strong>
+                <span class="check-cue"><span class="box"></span> Nykter</span>
+                <span class="check-cue"><span class="box"></span> Måttlig</span>
+                <span class="check-cue"><span class="box"></span> Riskbruk</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Socialt:</strong>
+                <span class="check-cue"><span class="box"></span> Eget boende</span>
+                <span class="check-cue"><span class="box"></span> SÄBO</span>
+                <span class="check-cue"><span class="box"></span> Hemtjänst</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Övrigt:</strong>
+                <span class="check-cue"><span class="box"></span> Yrkesarb.</span>
+                <span class="check-cue"><span class="box"></span> Sjukskr./Pens.</span>
+                <span class="check-cue"><span class="box"></span> Droger</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quad-col">
+          <div class="section-title">
+            <h3 class="cave-title">6. ALLERGIER & CAVE</h3>
+          </div>
+          <div class="cue-mini">
+            Överkänslighet läkemedel (Penicillin, NSAID etc.), Röntgenkontrast, Födoämnen, Latex.
+          </div>
+          <div class="writing-area">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. STATUS: HINTS, NEUROLOGI & VITALPARAMETRAR -->
+      <section class="form-section status-section">
+        <div class="section-title">
+          <h3>7. STATUS, HINTS & NEUROLOGI</h3>
+          <span class="cues-summary">HINTS vid kontinuerlig yrsel / nystagmus</span>
+        </div>
+        <div class="vitals-row">
+          <div class="vital-item"><strong>BT Ligg:</strong> _____/_____</div>
+          <div class="vital-item"><strong>BT Stå (1-3 min):</strong> _____/_____</div>
+          <div class="vital-item"><strong>Puls:</strong> _____ /min</div>
+          <div class="vital-item"><strong>Sat:</strong> _____ %</div>
+          <div class="vital-item"><strong>AF:</strong> _____ /min</div>
+          <div class="vital-item"><strong>Temp:</strong> _____ °C</div>
+          <div class="vital-item"><strong>B-Glukos:</strong> _____</div>
+        </div>
+        
+        <div class="status-rows">
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>HINTS - Head Impulse (HI):</strong>
+              <span class="check-cue"><span class="box"></span> Patologisk sakad (perifert)</span>
+              <span class="check-cue"><span class="box"></span> Normal/utan sakad (centralt/stroke!)</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>HINTS - Nystagmus (N):</strong>
+              <span class="check-cue"><span class="box"></span> Enriktad horisontell</span>
+              <span class="check-cue"><span class="box"></span> Riktningstotalt / Vertikal / Torsionell (centralt!)</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>HINTS - Test of Skew (TS):</strong>
+              <span class="check-cue"><span class="box"></span> Normal</span>
+              <span class="check-cue"><span class="box"></span> Skew deviation / vertikal skelning (centralt!)</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Dix-Hallpike / Lägesprov:</strong>
+              <span class="check-cue"><span class="box"></span> Höger pos</span>
+              <span class="check-cue"><span class="box"></span> Vänster pos (latens/tröttbarhet)</span>
+              <span class="check-cue"><span class="box"></span> Neg</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Lillhjärna & Gång:</strong> <span class="status-hints">Romberg, Finger-näs, Diadokokines, Linjegång, Ataxi:</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Kranialnerver & Öron:</strong> <span class="status-hints">Ögonmotorik, kranialnerver, otoskopi (trumhinnor/blåsor):</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. UTREDNING & PROVER -->
+      <section class="form-section">
+        <div class="section-title">
+          <h3>8. UTREDNING & PROVER</h3>
+          <span class="cues-summary">Ordinera utifrån misstanke</span>
+        </div>
+        <div class="investigation-row">
+          <div class="inv-col">
+            <span class="inv-lbl">Lab:</span>
+            <span class="check-cue"><span class="box"></span> Hb / LPK / TPK</span>
+            <span class="check-cue"><span class="box"></span> CRP</span>
+            <span class="check-cue"><span class="box"></span> Elstatus / Krea</span>
+            <span class="check-cue"><span class="box"></span> B-Glukos</span>
+            <span class="check-cue"><span class="box"></span> TNT</span>
+            <span class="check-cue"><span class="box"></span> EKG</span>
+          </div>
+          <div class="inv-col">
+            <span class="inv-lbl">Undersökning:</span>
+            <span class="check-cue"><span class="box"></span> CT-Hjärna nativ</span>
+            <span class="check-cue"><span class="box"></span> CT-Angio</span>
+            <span class="check-cue"><span class="box"></span> MR-Hjärna (diffusionsviktad)</span>
+            <span class="check-cue"><span class="box"></span> Telemetri</span>
+            <span class="check-cue"><span class="box"></span> ÖNH-konsult</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. BEDÖMNING, DIFFERENTIALDIAGNOS & PLAN -->
+      <section class="form-section assessment-section">
+        <div class="section-title">
+          <h3>9. BEDÖMNING, DIFFERENTIALDIAGNOS & PLAN</h3>
+          <span class="diff-cues">BPPV (Godartad lägesyrsel) • Vestibularisneurit • Cerebellär infarkt/blödning/PICA • Ménière • Ortostatism • Kardiell arytmi • Läkemedel</span>
+        </div>
+        <div class="writing-area">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </section>
+
+    </article>
+
+
+    <!-- ====================================================
+         MALL 3: HUVUDVÄRK
+         ==================================================== -->
+    <article class="a4-sheet template-sheet hidden" id="sheet-huvudvark">
+      
+      <!-- Patienthuvud / Header -->
+      <header class="sheet-header">
+        <div class="header-main">
+          <h2>HUVUDVÄRK <span class="header-sub">— SKRIV TYDLIGT!</span></h2>
+        </div>
+        <div class="patient-box">
+          <div class="patient-field pnr-field">
+            <span class="lbl">Patient / Pnr:</span>
+            <div class="handwrite-line"></div>
+          </div>
+          <div class="patient-field age-field">
+            <span class="lbl">Ålder / Kön:</span>
+            <div class="handwrite-line"></div>
+          </div>
+          <div class="patient-field date-field">
+            <span class="lbl">Datum / Tid:</span>
+            <div class="handwrite-line"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 1. SMÄRTANALYS & ANAMNES -->
+      <section class="form-section">
+        <div class="section-title">
+          <h3>1. SMÄRTANALYS & ANAMNES</h3>
+          <span class="cues-summary">Debut • Karaktär • Lokalisation • Tidsmönster</span>
+        </div>
+        
+        <div class="status-rows">
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Debut:</strong>
+              <span class="check-cue"><span class="box"></span> Åskknall (&lt;1 min - SAB?)</span>
+              <span class="check-cue"><span class="box"></span> Akut (minuter)</span>
+              <span class="check-cue"><span class="box"></span> Smygande / progredierande (dagar/v)</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Karaktär & Lokal.:</strong>
+              <span class="check-cue"><span class="box"></span> Bultande/pulserande</span>
+              <span class="check-cue"><span class="box"></span> Tryckande/spännande</span>
+              <span class="check-cue"><span class="box"></span> Skärande</span>
+              <span class="check-cue"><span class="box"></span> Ensidig</span>
+              <span class="check-cue"><span class="box"></span> Bilateral</span>
+              <span class="check-cue"><span class="box"></span> Nacke/Occipitalt</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Provoc./Lindrande:</strong>
+              <span class="check-cue"><span class="box"></span> Krystning/hosta/böjning (ökat ICP)</span>
+              <span class="check-cue"><span class="box"></span> Ljus/ljud</span>
+              <span class="check-cue"><span class="box"></span> Rörelse</span>
+              <span class="check-cue"><span class="box"></span> Triptan-/analgetikaeffekt</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Tidigare hvv:</strong>
+              <span class="check-cue"><span class="box"></span> Känd migrän/spänning</span>
+              <span class="check-cue"><span class="box"></span> Vanlig typ</span>
+              <span class="check-cue"><span class="box"></span> Helt ny karaktär / "Mitt livs värsta"</span>
+              <span class="check-cue"><span class="box"></span> NRS (0–10): ___</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+        </div>
+
+        <div class="writing-area extra-anamnes">
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </section>
+
+      <!-- 2. ASSOCIERADE SYMTOM & RÖDA FLAGGOR -->
+      <section class="form-section">
+        <div class="section-title">
+          <h3>2. ASSOCIERADE SYMTOM & RÖDA FLAGGOR</h3>
+        </div>
+        <div class="cue-checklist">
+          <span class="check-cue"><span class="box"></span> Illamående / Kräkning</span>
+          <span class="check-cue"><span class="box"></span> Ljuskänslighet (Fotofobi) / Ljud</span>
+          <span class="check-cue"><span class="box"></span> Aura / Synfältsbortfall / Skotom</span>
+          <span class="check-cue"><span class="box"></span> Nackstyvhet</span>
+          <span class="check-cue"><span class="box"></span> Neurologiska bortfall (pares/domning/tal)</span>
+          <span class="check-cue"><span class="box"></span> Medvetandepåverkan / Förvirring</span>
+          <span class="check-cue"><span class="box"></span> Känd Migrän / Spänning</span>
+          <span class="check-cue"><span class="box"></span> Aneurysm / SAB-hereditet</span>
+          <span class="check-cue"><span class="box"></span> Skalpömhet / Tuggclaudicatio</span>
+          <span class="check-cue"><span class="box"></span> Antikoagulantia / Trombosrisk</span>
+          <span class="check-cue"><span class="box"></span> Trauma mot huvud nyligen</span>
+        </div>
+      </section>
+
+      <!-- 3. FYRA STANDARDISERADE BAKGRUNDSRUTOR -->
+      <section class="form-section grid-quad-section">
+        <div class="quad-col">
+          <div class="section-title">
+            <h3>3. TIDIGARE SJUKDOMAR & OPERATIONER</h3>
+          </div>
+          <div class="cue-checklist mini-boxes">
+            <span class="check-cue"><span class="box"></span> Hypertoni</span>
+            <span class="check-cue"><span class="box"></span> Diabetes</span>
+            <span class="check-cue"><span class="box"></span> Hjärt-kärlsjd</span>
+            <span class="check-cue"><span class="box"></span> Hjärtsvikt</span>
+            <span class="check-cue"><span class="box"></span> Flimmer/Arytmi</span>
+            <span class="check-cue"><span class="box"></span> Stroke/TIA</span>
+            <span class="check-cue"><span class="box"></span> KOL/Astma</span>
+            <span class="check-cue"><span class="box"></span> Njur-/Leversjd</span>
+            <span class="check-cue"><span class="box"></span> Malignitet</span>
+            <span class="check-cue"><span class="box"></span> VTE/Trombos</span>
+            <span class="check-cue"><span class="box"></span> Ulcus/GI</span>
+            <span class="check-cue"><span class="box"></span> Hereditet</span>
+          </div>
+          <div class="writing-area">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <div class="quad-col">
+          <div class="section-title">
+            <h3>4. AKTUELLA LÄKEMEDEL</h3>
+          </div>
+          <div class="writing-area">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <div class="quad-col">
+          <div class="section-title">
+            <h3>5. TOBAK, ALKOHOL & SOCIALT</h3>
+          </div>
+          <div class="status-rows quad-rows">
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Tobak:</strong>
+                <span class="check-cue"><span class="box"></span> Icke</span>
+                <span class="check-cue"><span class="box"></span> Tid.</span>
+                <span class="check-cue"><span class="box"></span> Aktiv (pkt-år: __)</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Alkohol:</strong>
+                <span class="check-cue"><span class="box"></span> Nykter</span>
+                <span class="check-cue"><span class="box"></span> Måttlig</span>
+                <span class="check-cue"><span class="box"></span> Riskbruk</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Socialt:</strong>
+                <span class="check-cue"><span class="box"></span> Eget boende</span>
+                <span class="check-cue"><span class="box"></span> SÄBO</span>
+                <span class="check-cue"><span class="box"></span> Hemtjänst</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Övrigt:</strong>
+                <span class="check-cue"><span class="box"></span> Yrkesarb.</span>
+                <span class="check-cue"><span class="box"></span> Sjukskr./Pens.</span>
+                <span class="check-cue"><span class="box"></span> Droger</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quad-col">
+          <div class="section-title">
+            <h3 class="cave-title">6. ALLERGIER & CAVE</h3>
+          </div>
+          <div class="cue-mini">
+            Överkänslighet läkemedel (Penicillin, NSAID etc.), Röntgenkontrast, Födoämnen, Latex.
+          </div>
+          <div class="writing-area">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. STATUS & NEUROLOGI -->
+      <section class="form-section status-section">
+        <div class="section-title">
+          <h3>7. STATUS, NEUROLOGI & LOKALFYND</h3>
+        </div>
+        <div class="vitals-row">
+          <div class="vital-item"><strong>BT:</strong> _____/_____</div>
+          <div class="vital-item"><strong>Puls:</strong> _____ /min</div>
+          <div class="vital-item"><strong>Sat:</strong> _____ %</div>
+          <div class="vital-item"><strong>AF:</strong> _____ /min</div>
+          <div class="vital-item"><strong>Temp:</strong> _____ °C</div>
+          <div class="vital-item"><strong>RLS / GCS:</strong> _____</div>
+        </div>
+        
+        <div class="status-rows">
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>AT & Nackstyvhet:</strong>
+              <span class="check-cue"><span class="box"></span> Opåv</span>
+              <span class="check-cue"><span class="box"></span> Smärtpåv</span>
+              <span class="check-cue"><span class="box"></span> Nackstyvhet / Kernig / Brudzinski</span>
+              <span class="check-cue"><span class="box"></span> Mjuk nacke</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Kranialnerver & Ögon:</strong> <span class="status-hints">Pupiller (likstora/ljusreag.), ögonmotorik, synfält, ögonbotten/stas:</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Motorik & Reflexer:</strong> <span class="status-hints">Grassets test, pareser, symmetri, senreflexer, Babinski:</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Lillhjärna & Gång:</strong> <span class="status-hints">Finger-näs, diadokokinesi, ataxi, Romberg, gångmönster:</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <strong>Palpation:</strong>
+              <span class="check-cue"><span class="box"></span> A. temporalis öm/förtjockad</span>
+              <span class="check-cue"><span class="box"></span> Nackmuskelömhet / Triggerpunkter</span>
+              <span class="check-cue"><span class="box"></span> Bihåleöm</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. UTREDNING & PROVER -->
+      <section class="form-section">
+        <div class="section-title">
+          <h3>8. UTREDNING & PROVER</h3>
+          <span class="cues-summary">Ordinera utifrån misstanke</span>
+        </div>
+        <div class="investigation-row">
+          <div class="inv-col">
+            <span class="inv-lbl">Lab:</span>
+            <span class="check-cue"><span class="box"></span> Hb / LPK / TPK</span>
+            <span class="check-cue"><span class="box"></span> CRP</span>
+            <span class="check-cue"><span class="box"></span> SR (Temporalisarterit)</span>
+            <span class="check-cue"><span class="box"></span> Elstatus / Krea</span>
+            <span class="check-cue"><span class="box"></span> PK-INR</span>
+            <span class="check-cue"><span class="box"></span> B-Glukos</span>
+          </div>
+          <div class="inv-col">
+            <span class="inv-lbl">Undersökning:</span>
+            <span class="check-cue"><span class="box"></span> CT-Hjärna nativ (akut SAB/blödning)</span>
+            <span class="check-cue"><span class="box"></span> CT-Angio</span>
+            <span class="check-cue"><span class="box"></span> Lumbalpunktion (LP - tryck/spektro/celler)</span>
+            <span class="check-cue"><span class="box"></span> MR-Hjärna</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. BEDÖMNING, DIFFERENTIALDIAGNOS & PLAN -->
+      <section class="form-section assessment-section">
+        <div class="section-title">
+          <h3>9. BEDÖMNING, DIFFERENTIALDIAGNOS & PLAN</h3>
+          <span class="diff-cues">Spänningshuvudvärk • Migrän • SAB • Subduralhematom • Meningit/Encefalit • Temporalisarterit • Sinustrombos • Malignitet/Expansivitet • Glaukom</span>
+        </div>
+        <div class="writing-area">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </section>
+
+    </article>
+
+
+    <!-- ====================================================
+         MALL 4: GENERELL / AKUT (ABCDE)
          ==================================================== -->
     <article class="a4-sheet template-sheet hidden" id="sheet-generell">
       
       <!-- Patienthuvud / Header -->
       <header class="sheet-header">
         <div class="header-main">
-          <h2>GENERELL ANAMNES <span class="header-sub">— STATUS & ABCDE</span></h2>
+          <h2>GENERELL ANAMNES <span class="header-sub">— SKRIV TYDLIGT!</span></h2>
         </div>
         <div class="patient-box">
           <div class="patient-field pnr-field">
@@ -390,7 +1026,7 @@
         </div>
       </section>
 
-      <!-- 3. FYRA BAKGRUNDSRUTOR -->
+      <!-- 3. FYRA STANDARDISERADE BAKGRUNDSRUTOR -->
       <section class="form-section grid-quad-section">
         <div class="quad-col">
           <div class="section-title">
@@ -400,13 +1036,15 @@
             <span class="check-cue"><span class="box"></span> Hypertoni</span>
             <span class="check-cue"><span class="box"></span> Diabetes</span>
             <span class="check-cue"><span class="box"></span> Hjärt-kärlsjd</span>
-            <span class="check-cue"><span class="box"></span> KOL / Astma</span>
-            <span class="check-cue"><span class="box"></span> Stroke / TIA</span>
-            <span class="check-cue"><span class="box"></span> Njur- / Leversjd</span>
+            <span class="check-cue"><span class="box"></span> Hjärtsvikt</span>
+            <span class="check-cue"><span class="box"></span> Flimmer/Arytmi</span>
+            <span class="check-cue"><span class="box"></span> Stroke/TIA</span>
+            <span class="check-cue"><span class="box"></span> KOL/Astma</span>
+            <span class="check-cue"><span class="box"></span> Njur-/Leversjd</span>
             <span class="check-cue"><span class="box"></span> Malignitet</span>
-            <span class="check-cue"><span class="box"></span> VTE / Trombos</span>
-            <span class="check-cue"><span class="box"></span> Ulcus / GI</span>
-            <span class="check-cue"><span class="box"></span> Psykiatri</span>
+            <span class="check-cue"><span class="box"></span> VTE/Trombos</span>
+            <span class="check-cue"><span class="box"></span> Ulcus/GI</span>
+            <span class="check-cue"><span class="box"></span> Hereditet</span>
           </div>
           <div class="writing-area">
             <div class="line"></div>
@@ -436,25 +1074,37 @@
           <div class="status-rows quad-rows">
             <div class="status-row">
               <div class="status-lbl-block">
-                <strong>Tobak:</strong> <span class="status-hints">Rökning / snus / pkt-år:</span>
+                <strong>Tobak:</strong>
+                <span class="check-cue"><span class="box"></span> Icke</span>
+                <span class="check-cue"><span class="box"></span> Tid.</span>
+                <span class="check-cue"><span class="box"></span> Aktiv (pkt-år: __)</span>
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
             <div class="status-row">
               <div class="status-lbl-block">
-                <strong>Alkohol:</strong> <span class="status-hints">Konsumtion / riskbruk:</span>
+                <strong>Alkohol:</strong>
+                <span class="check-cue"><span class="box"></span> Nykter</span>
+                <span class="check-cue"><span class="box"></span> Måttlig</span>
+                <span class="check-cue"><span class="box"></span> Riskbruk</span>
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
             <div class="status-row">
               <div class="status-lbl-block">
-                <strong>Socialt:</strong> <span class="status-hints">Boende, yrke, hemtjänst:</span>
+                <strong>Socialt:</strong>
+                <span class="check-cue"><span class="box"></span> Eget boende</span>
+                <span class="check-cue"><span class="box"></span> SÄBO</span>
+                <span class="check-cue"><span class="box"></span> Hemtjänst</span>
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
             <div class="status-row">
               <div class="status-lbl-block">
-                <strong>Övrigt:</strong> <span class="status-hints">Droger / vardagsfunktion:</span>
+                <strong>Övrigt:</strong>
+                <span class="check-cue"><span class="box"></span> Yrkesarb.</span>
+                <span class="check-cue"><span class="box"></span> Sjukskr./Pens.</span>
+                <span class="check-cue"><span class="box"></span> Droger</span>
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
@@ -466,7 +1116,7 @@
             <h3 class="cave-title">6. ALLERGIER & CAVE</h3>
           </div>
           <div class="cue-mini">
-            Överkänslighet läkemedel (Penicillin etc.), Röntgenkontrast, Födoämnen, Latex.
+            Överkänslighet läkemedel (Penicillin, NSAID etc.), Röntgenkontrast, Födoämnen, Latex.
           </div>
           <div class="writing-area">
             <div class="line"></div>

@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const templateSelect = document.getElementById('templateSelect');
   const sheets = {
     brostsmarta: document.getElementById('sheet-brostsmarta'),
+    yrsel: document.getElementById('sheet-yrsel'),
+    huvudvark: document.getElementById('sheet-huvudvark'),
     generell: document.getElementById('sheet-generell')
   };
 
