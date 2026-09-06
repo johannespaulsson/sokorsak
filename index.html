@@ -12,21 +12,25 @@
     <div class="control-container">
       <div class="brand">
         <h1>🩺 Sökorsak <span class="tag">Print-on-Demand</span></h1>
-        <p>A4-anteckningsmall med stödord för kliniker</p>
+        <p>A4-anteckningsmallar med stödord för kliniker</p>
       </div>
       <div class="controls">
-        <label for="templateSelect"><strong>Sökorsak:</strong></label>
+        <label for="templateSelect"><strong>Välj mall:</strong></label>
         <select id="templateSelect">
-          <option value="brostsmarta" selected>Bröstsmärta</option>
+          <option value="brostsmarta" selected>Bröstsmärta (OPQRST)</option>
+          <option value="generell">Generell / Akut (ABCDE)</option>
         </select>
         <button class="btn btn-primary" onclick="window.print()">🖨️ Skriv ut A4</button>
       </div>
     </div>
   </header>
 
-  <!-- A4-sidan som skrivs ut -->
   <main class="page-wrapper">
-    <article class="a4-sheet" id="printArea">
+    
+    <!-- ====================================================
+         MALL 1: BRÖSTSMÄRTA
+         ==================================================== -->
+    <article class="a4-sheet template-sheet" id="sheet-brostsmarta">
       
       <!-- Patienthuvud / Header -->
       <header class="sheet-header">
@@ -56,7 +60,6 @@
         </div>
         
         <div class="opqrst-rows">
-          <!-- O -->
           <div class="op-row">
             <div class="op-label-block">
               <span class="op-badge">O</span>
@@ -66,7 +69,6 @@
             <div class="handwrite-line op-line"></div>
           </div>
 
-          <!-- P -->
           <div class="op-row">
             <div class="op-label-block">
               <span class="op-badge">P</span>
@@ -76,7 +78,6 @@
             <div class="handwrite-line op-line"></div>
           </div>
 
-          <!-- Q -->
           <div class="op-row">
             <div class="op-label-block">
               <span class="op-badge">Q</span>
@@ -86,7 +87,6 @@
             <div class="handwrite-line op-line"></div>
           </div>
 
-          <!-- R -->
           <div class="op-row">
             <div class="op-label-block">
               <span class="op-badge">R</span>
@@ -96,7 +96,6 @@
             <div class="handwrite-line op-line"></div>
           </div>
 
-          <!-- S -->
           <div class="op-row">
             <div class="op-label-block">
               <span class="op-badge">S</span>
@@ -106,7 +105,6 @@
             <div class="handwrite-line op-line"></div>
           </div>
 
-          <!-- T -->
           <div class="op-row">
             <div class="op-label-block">
               <span class="op-badge">T</span>
@@ -117,8 +115,8 @@
           </div>
         </div>
 
-        <!-- Extra fält för övrig anamnes / fritext -->
         <div class="writing-area extra-anamnes">
+          <div class="line"></div>
           <div class="line"></div>
         </div>
       </section>
@@ -141,10 +139,8 @@
         </div>
       </section>
 
-      <!-- 3. FYRA RUTOR: TIDIGARE SJUKDOMAR, LÄKEMEDEL, SOCIALT/TOBAK/ALKOHOL, ALLERGIER -->
+      <!-- 3. FYRA BAKGRUNDSRUTOR -->
       <section class="form-section grid-quad-section">
-        
-        <!-- Ruta A: Tidigare Sjukdomar -->
         <div class="quad-col">
           <div class="section-title">
             <h3>3. TIDIGARE SJUKDOMAR & RISKFAKTORER</h3>
@@ -166,10 +162,10 @@
           <div class="writing-area">
             <div class="line"></div>
             <div class="line"></div>
+            <div class="line"></div>
           </div>
         </div>
 
-        <!-- Ruta B: Läkemedel -->
         <div class="quad-col">
           <div class="section-title">
             <h3>4. AKTUELLA LÄKEMEDEL</h3>
@@ -179,10 +175,11 @@
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
           </div>
         </div>
 
-        <!-- Ruta C: Tobak, Alkohol & Socialt -->
         <div class="quad-col">
           <div class="section-title">
             <h3>5. TOBAK, ALKOHOL & SOCIALT</h3>
@@ -194,21 +191,18 @@
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
-
             <div class="status-row">
               <div class="status-lbl-block">
                 <strong>Alkohol:</strong> <span class="status-hints">Riskbruk / vanor:</span>
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
-
             <div class="status-row">
               <div class="status-lbl-block">
                 <strong>Socialt:</strong> <span class="status-hints">Boende, yrke, hemsituation:</span>
               </div>
               <div class="handwrite-line status-line"></div>
             </div>
-
             <div class="status-row">
               <div class="status-lbl-block">
                 <strong>Övrigt:</strong> <span class="status-hints">Droger / vardagsfunktion:</span>
@@ -218,7 +212,6 @@
           </div>
         </div>
 
-        <!-- Ruta D: Allergier / CAVE -->
         <div class="quad-col">
           <div class="section-title">
             <h3 class="cave-title">6. ALLERGIER & CAVE</h3>
@@ -229,9 +222,9 @@
           <div class="writing-area">
             <div class="line"></div>
             <div class="line"></div>
+            <div class="line"></div>
           </div>
         </div>
-
       </section>
 
       <!-- 4. STATUS & VITALPARAMETRAR -->
@@ -239,8 +232,6 @@
         <div class="section-title">
           <h3>7. STATUS & VITALPARAMETRAR (ABCDE)</h3>
         </div>
-        
-        <!-- Vitalia-fält -->
         <div class="vitals-row">
           <div class="vital-item"><strong>BT Hö:</strong> _____/_____</div>
           <div class="vital-item"><strong>BT Vä:</strong> _____/_____</div>
@@ -249,8 +240,6 @@
           <div class="vital-item"><strong>AF:</strong> _____ /min</div>
           <div class="vital-item"><strong>Temp:</strong> _____ °C</div>
         </div>
-
-        <!-- Dedikerade statusrader för varje organ/fynd -->
         <div class="status-rows">
           <div class="status-row">
             <div class="status-lbl-block">
@@ -258,35 +247,30 @@
             </div>
             <div class="handwrite-line status-line"></div>
           </div>
-
           <div class="status-row">
             <div class="status-lbl-block">
               <strong>Cor:</strong> <span class="status-hints">Rytm, frekvens, toner, biljud:</span>
             </div>
             <div class="handwrite-line status-line"></div>
           </div>
-
           <div class="status-row">
             <div class="status-lbl-block">
               <strong>Pulm:</strong> <span class="status-hints">Andningsljud, rassel, ronkler, liksidigt:</span>
             </div>
             <div class="handwrite-line status-line"></div>
           </div>
-
           <div class="status-row">
             <div class="status-lbl-block">
               <strong>Thoraxvägg & palpation:</strong> <span class="status-hints">Palpömhet broskfog/muskel/revben:</span>
             </div>
             <div class="handwrite-line status-line"></div>
           </div>
-
           <div class="status-row">
             <div class="status-lbl-block">
               <strong>Buk & rygg:</strong> <span class="status-hints">Mjuk, ömhet epigastriet, palpöm rygg:</span>
             </div>
             <div class="handwrite-line status-line"></div>
           </div>
-
           <div class="status-row">
             <div class="status-lbl-block">
               <strong>Halsvenstas & perifera ödem:</strong> <span class="status-hints">Stas, ensidig bensvullnad:</span>
@@ -296,7 +280,7 @@
         </div>
       </section>
 
-      <!-- 5. UTREDNING, PROVER & MONITORERING -->
+      <!-- 5. UTREDNING & PROVER -->
       <section class="form-section">
         <div class="section-title">
           <h3>8. UTREDNING & PROVER</h3>
@@ -334,10 +318,259 @@
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
         </div>
       </section>
 
     </article>
+
+
+    <!-- ====================================================
+         MALL 2: GENERELL / AKUT (ABCDE)
+         ==================================================== -->
+    <article class="a4-sheet template-sheet hidden" id="sheet-generell">
+      
+      <!-- Patienthuvud / Header -->
+      <header class="sheet-header">
+        <div class="header-main">
+          <h2>GENERELL ANAMNES <span class="header-sub">— STATUS & ABCDE</span></h2>
+        </div>
+        <div class="patient-box">
+          <div class="patient-field pnr-field">
+            <span class="lbl">Patient / Pnr:</span>
+            <div class="handwrite-line"></div>
+          </div>
+          <div class="patient-field age-field">
+            <span class="lbl">Ålder / Kön:</span>
+            <div class="handwrite-line"></div>
+          </div>
+          <div class="patient-field date-field">
+            <span class="lbl">Datum / Tid:</span>
+            <div class="handwrite-line"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 1. SÖKORSAK & AKTUELL ANAMNES -->
+      <section class="form-section">
+        <div class="section-title">
+          <h3>1. SÖKORSAK & AKTUELL ANAMNES</h3>
+          <span class="cues-summary">Debut • Duration • Förlopp • Lokalisation • Provocerande/Lindrande • Tidigare liknande besvär</span>
+        </div>
+        <div class="writing-area">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </section>
+
+      <!-- 2. ASSOCIERADE SYMTOM & ALLMÄNTILLSTÅND -->
+      <section class="form-section">
+        <div class="section-title">
+          <h3>2. ASSOCIERADE SYMTOM & ORGANGENOMGÅNG</h3>
+        </div>
+        <div class="cue-checklist">
+          <span class="check-cue"><span class="box"></span> Feber / Frossa</span>
+          <span class="check-cue"><span class="box"></span> Dyspné / Andfåddhet</span>
+          <span class="check-cue"><span class="box"></span> Bröstsmärta / Tryck</span>
+          <span class="check-cue"><span class="box"></span> Buksmärta / GI-symtom</span>
+          <span class="check-cue"><span class="box"></span> Illamående / Kräkning</span>
+          <span class="check-cue"><span class="box"></span> Yrsel / Svimning (Synkope)</span>
+          <span class="check-cue"><span class="box"></span> Huvudvärk / Nackvärk</span>
+          <span class="check-cue"><span class="box"></span> Neurologiska bortfall</span>
+          <span class="check-cue"><span class="box"></span> Urinvägsbesvär / Dysuri</span>
+          <span class="check-cue"><span class="box"></span> Viktnedgång / Trötthet</span>
+          <span class="check-cue"><span class="box"></span> Bensvullnad / Rodnad</span>
+        </div>
+      </section>
+
+      <!-- 3. FYRA BAKGRUNDSRUTOR -->
+      <section class="form-section grid-quad-section">
+        <div class="quad-col">
+          <div class="section-title">
+            <h3>3. TIDIGARE SJUKDOMAR & OPERATIONER</h3>
+          </div>
+          <div class="cue-checklist mini-boxes">
+            <span class="check-cue"><span class="box"></span> Hypertoni</span>
+            <span class="check-cue"><span class="box"></span> Diabetes</span>
+            <span class="check-cue"><span class="box"></span> Hjärt-kärlsjd</span>
+            <span class="check-cue"><span class="box"></span> KOL / Astma</span>
+            <span class="check-cue"><span class="box"></span> Stroke / TIA</span>
+            <span class="check-cue"><span class="box"></span> Njur- / Leversjd</span>
+            <span class="check-cue"><span class="box"></span> Malignitet</span>
+            <span class="check-cue"><span class="box"></span> VTE / Trombos</span>
+            <span class="check-cue"><span class="box"></span> Ulcus / GI</span>
+            <span class="check-cue"><span class="box"></span> Psykiatri</span>
+          </div>
+          <div class="writing-area">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <div class="quad-col">
+          <div class="section-title">
+            <h3>4. AKTUELLA LÄKEMEDEL</h3>
+          </div>
+          <div class="writing-area">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <div class="quad-col">
+          <div class="section-title">
+            <h3>5. TOBAK, ALKOHOL & SOCIALT</h3>
+          </div>
+          <div class="status-rows quad-rows">
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Tobak:</strong> <span class="status-hints">Rökning / snus / pkt-år:</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Alkohol:</strong> <span class="status-hints">Konsumtion / riskbruk:</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Socialt:</strong> <span class="status-hints">Boende, yrke, hemtjänst:</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+            <div class="status-row">
+              <div class="status-lbl-block">
+                <strong>Övrigt:</strong> <span class="status-hints">Droger / vardagsfunktion:</span>
+              </div>
+              <div class="handwrite-line status-line"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quad-col">
+          <div class="section-title">
+            <h3 class="cave-title">6. ALLERGIER & CAVE</h3>
+          </div>
+          <div class="cue-mini">
+            Överkänslighet läkemedel (Penicillin etc.), Röntgenkontrast, Födoämnen, Latex.
+          </div>
+          <div class="writing-area">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. STATUS ENLIGT ABCDE -->
+      <section class="form-section status-section">
+        <div class="section-title">
+          <h3>7. STATUS & VITALPARAMETRAR (ABCDE)</h3>
+        </div>
+        <div class="vitals-row">
+          <div class="vital-item"><strong>BT (H/V):</strong> _____/_____</div>
+          <div class="vital-item"><strong>Puls:</strong> _____ /min (reg/oreg)</div>
+          <div class="vital-item"><strong>Sat:</strong> _____ % (luft/O2)</div>
+          <div class="vital-item"><strong>AF:</strong> _____ /min</div>
+          <div class="vital-item"><strong>Temp:</strong> _____ °C</div>
+          <div class="vital-item"><strong>B-Glukos:</strong> _____</div>
+          <div class="vital-item"><strong>RLS / GCS:</strong> _____</div>
+        </div>
+        <div class="status-rows">
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <span class="op-badge">A</span> <strong>Airway:</strong> <span class="status-hints">Fria luftvägar, stridor, svullnad, sekret:</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <span class="op-badge">B</span> <strong>Breathing:</strong> <span class="status-hints">Andningsmönster, cor/pulm, rassel/ronkler, cyanos:</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <span class="op-badge">C</span> <strong>Circulation:</strong> <span class="status-hints">Puls, perifer återfyllnad, hud (varm/kall/blek), ödem:</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <span class="op-badge">D</span> <strong>Disability:</strong> <span class="status-hints">Medvetande (RLS/GCS), pupiller, pareser, tal, nackstyvhet:</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+          <div class="status-row">
+            <div class="status-lbl-block">
+              <span class="op-badge">E</span> <strong>Exposure:</strong> <span class="status-hints">Buk (palpöm/mjuk), hud, sår, utslag, trauma, extremiteter:</span>
+            </div>
+            <div class="handwrite-line status-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. UTREDNING & PROVER -->
+      <section class="form-section">
+        <div class="section-title">
+          <h3>8. UTREDNING & PROVER</h3>
+          <span class="cues-summary">Ordinera utifrån misstanke</span>
+        </div>
+        <div class="investigation-row">
+          <div class="inv-col">
+            <span class="inv-lbl">Lab:</span>
+            <span class="check-cue"><span class="box"></span> Hb / LPK / TPK</span>
+            <span class="check-cue"><span class="box"></span> CRP</span>
+            <span class="check-cue"><span class="box"></span> Elstatus / Krea</span>
+            <span class="check-cue"><span class="box"></span> TNT</span>
+            <span class="check-cue"><span class="box"></span> D-dimer</span>
+            <span class="check-cue"><span class="box"></span> Leverstatus</span>
+            <span class="check-cue"><span class="box"></span> Blodgas</span>
+            <span class="check-cue"><span class="box"></span> Urinsticka</span>
+            <span class="check-cue"><span class="box"></span> Odling (Blod/Urin)</span>
+          </div>
+          <div class="inv-col">
+            <span class="inv-lbl">Undersökning:</span>
+            <span class="check-cue"><span class="box"></span> EKG</span>
+            <span class="check-cue"><span class="box"></span> Rtg pulm</span>
+            <span class="check-cue"><span class="box"></span> Rtg buk</span>
+            <span class="check-cue"><span class="box"></span> CT (Hjärna/Thorax/Buk)</span>
+            <span class="check-cue"><span class="box"></span> Ultraljud</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. BEDÖMNING, DIAGNOS & PLAN -->
+      <section class="form-section assessment-section">
+        <div class="section-title">
+          <h3>9. BEDÖMNING, DIFFERENTIALDIAGNOSER & PLAN</h3>
+        </div>
+        <div class="writing-area">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </section>
+
+    </article>
+
   </main>
 
   <script src="app.js"></script>
