@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sökorsak - Print on Demand (Bröstsmärta)</title>
+  <title>Sökorsak - Print on Demand</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,12 +12,12 @@
     <div class="control-container">
       <div class="brand">
         <h1>🩺 Sökorsak <span class="tag">Print-on-Demand</span></h1>
-        <p>A4-anteckningsmall med stödord för läkare • Akutbok s. 40–41 & OPQRST</p>
+        <p>A4-anteckningsmall med stödord för kliniker</p>
       </div>
       <div class="controls">
         <label for="templateSelect"><strong>Sökorsak:</strong></label>
         <select id="templateSelect">
-          <option value="brostsmarta" selected>Bröstsmärta (Akutbok s.40 + Internetmedicin)</option>
+          <option value="brostsmarta" selected>Bröstsmärta</option>
         </select>
         <button class="btn btn-primary" onclick="window.print()">🖨️ Skriv ut A4</button>
       </div>
@@ -32,7 +32,6 @@
       <header class="sheet-header">
         <div class="header-main">
           <h2>BRÖSTSMÄRTA <span class="header-sub">— ANAMNES & STATUS</span></h2>
-          <span class="source-credit">Akutmedicin s. 40–41 • Internetmedicin.se</span>
         </div>
         <div class="patient-box">
           <div class="patient-field pnr-field">
@@ -150,7 +149,7 @@
       <!-- 3. FYRA RUTOR: TIDIGARE SJUKDOMAR, LÄKEMEDEL, SOCIALT/TOBAK/ALKOHOL, ALLERGIER -->
       <section class="form-section grid-quad-section">
         
-        <!-- Ruta A: Tidigare Sjukdomar (med bockrutor) -->
+        <!-- Ruta A: Tidigare Sjukdomar -->
         <div class="quad-col">
           <div class="section-title">
             <h3>3. TIDIGARE SJUKDOMAR & RISKFAKTORER</h3>
@@ -176,7 +175,7 @@
           </div>
         </div>
 
-        <!-- Ruta B: Läkemedel (5 rader) -->
+        <!-- Ruta B: Läkemedel -->
         <div class="quad-col">
           <div class="section-title">
             <h3>4. AKTUELLA LÄKEMEDEL</h3>
@@ -243,11 +242,10 @@
 
       </section>
 
-      <!-- 4. STATUS & VITALPARAMETRAR (Från s. 40) -->
+      <!-- 4. STATUS & VITALPARAMETRAR -->
       <section class="form-section status-section">
         <div class="section-title">
           <h3>7. STATUS & VITALPARAMETRAR (ABCDE)</h3>
-          <span class="cues-summary">Akutmedicin s. 40</span>
         </div>
         
         <!-- Vitalia-fält -->
@@ -260,7 +258,7 @@
           <div class="vital-item"><strong>Temp:</strong> _____ °C</div>
         </div>
 
-        <!-- Dedikerade statusrader för varje organ/fynd med stödord och skrivlinje -->
+        <!-- Dedikerade statusrader för varje organ/fynd -->
         <div class="status-rows">
           <div class="status-row">
             <div class="status-lbl-block">
@@ -306,10 +304,10 @@
         </div>
       </section>
 
-      <!-- 5. UTREDNING, PROVER & MONITORERING (Från s. 40) -->
+      <!-- 5. UTREDNING, PROVER & MONITORERING -->
       <section class="form-section">
         <div class="section-title">
-          <h3>8. UTREDNING & PROVER (s. 40)</h3>
+          <h3>8. UTREDNING & PROVER</h3>
           <span class="cues-summary">Ordinera utifrån misstanke</span>
         </div>
         <div class="investigation-row">
