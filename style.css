@@ -428,6 +428,19 @@ body {
   color: #0f172a;
 }
 
+.inv-extra-cue {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.inv-inline-line {
+  display: inline-block;
+  min-width: 55px;
+  border-bottom: 1.5px solid var(--line-color);
+  min-height: 14px;
+}
+
 /* ====================================================
    SKRIVRADER
    ==================================================== */
@@ -517,7 +530,7 @@ body {
     print-color-adjust: exact;
   }
 
-  .line, .op-line, .status-line, .handwrite-line {
+  .line, .op-line, .status-line, .handwrite-line, .inv-inline-line {
     border-bottom: 1.5px solid #64748b !important;
   }
 }
