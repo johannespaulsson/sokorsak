@@ -1,0 +1,521 @@
+/* Reset & Grundläggande variabler */
+:root {
+  --primary: #1e3a8a;
+  --primary-light: #eff6ff;
+  --text-dark: #0f172a;
+  --text-muted: #334155;
+  --line-color: #64748b;
+  --border-dark: #0f172a;
+  --border-light: #94a3b8;
+  --sheet-bg: #ffffff;
+  --app-bg: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--app-bg);
+  color: var(--text-dark);
+  line-height: 1.3;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ====================================================
+   KONTROLLBAR (Visas endast på skärm)
+   ==================================================== */
+.control-bar {
+  background: #0f172a;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.control-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brand h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand .tag {
+  font-size: 0.75rem;
+  background: #2563eb;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.brand p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.controls select {
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* ====================================================
+   A4-ARK LAYOUT (SKÄRMVISNING)
+   ==================================================== */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.a4-sheet {
+  background: var(--sheet-bg);
+  width: 210mm;
+  min-height: 297mm;
+  height: 297mm;
+  max-height: 297mm;
+  padding: 8mm 12mm 8mm 12mm;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 9.5pt;
+  overflow: hidden;
+}
+
+/* ====================================================
+   PATIENTHUVUD
+   ==================================================== */
+.sheet-header {
+  border-bottom: 2px solid var(--border-dark);
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.header-main h2 {
+  font-size: 13pt;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+.header-sub {
+  color: #b91c1c;
+  font-size: 11pt;
+}
+
+.source-credit {
+  font-size: 8pt;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.patient-box {
+  display: flex;
+  gap: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.patient-field {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.patient-field.pnr-field { flex: 1.4; }
+.patient-field.age-field { flex: 0.8; }
+.patient-field.date-field { flex: 1; }
+.patient-field.doc-field { flex: 1; }
+
+.lbl {
+  font-size: 8.5pt;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--text-dark);
+}
+
+.handwrite-line {
+  border-bottom: 1.5px solid var(--line-color);
+  flex-grow: 1;
+  min-height: 18px;
+}
+
+/* ====================================================
+   SEKTIONER & STÖDORD
+   ==================================================== */
+.form-section {
+  margin-bottom: 4px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 3px 6px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+
+.section-title h3 {
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.3px;
+}
+
+.cave-title {
+  color: #b91c1c !important;
+}
+
+.cues-summary {
+  font-size: 8pt;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.diff-cues {
+  font-size: 8pt;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+/* ====================================================
+   OPQRST ROWS (Rad direkt bredvid varje bokstav)
+   ==================================================== */
+.opqrst-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.op-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  min-height: 20px;
+}
+
+.op-label-block {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  font-size: 8.5pt;
+  flex-shrink: 0;
+}
+
+.op-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: white;
+  font-weight: 800;
+  font-size: 8.5pt;
+  width: 17px;
+  height: 17px;
+  border-radius: 3px;
+}
+
+.op-name {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.op-hints {
+  color: #475569;
+  font-size: 8pt;
+}
+
+.op-line {
+  flex-grow: 1;
+  border-bottom: 1.5px solid var(--line-color);
+  min-height: 18px;
+}
+
+.extra-anamnes {
+  margin-top: 2px;
+}
+
+/* Checklist chips */
+.cue-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+  font-size: 8.5pt;
+  background: #f8fafc;
+  padding: 3px 6px;
+  border-radius: 3px;
+}
+
+.mini-boxes {
+  gap: 2px 6px;
+  font-size: 8pt;
+  padding: 2px 4px;
+  margin-bottom: 3px;
+}
+
+.check-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.box {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1.2px solid #334155;
+  border-radius: 2px;
+  background: white;
+}
+
+/* 4 Rutor (Tidigare sjkd, Läkemedel, Tobak/Alkohol/Socialt, CAVE) */
+.grid-quad-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  padding: 0;
+  border: none;
+}
+
+.quad-col {
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 3px 6px;
+  background: #ffffff;
+}
+
+.cue-mini {
+  font-size: 8pt;
+  color: #475569;
+  line-height: 1.2;
+  background: #f8fafc;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-bottom: 3px;
+}
+
+/* Vitalparametrar */
+.vitals-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8.5pt;
+  background: #f8fafc;
+  padding: 3px 6px;
+  border-radius: 3px;
+  margin-bottom: 3px;
+  border: 1px solid #e2e8f0;
+}
+
+.vital-item {
+  color: #0f172a;
+}
+
+/* Statusrader */
+.status-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.status-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  min-height: 19px;
+}
+
+.status-lbl-block {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  white-space: nowrap;
+  font-size: 8.5pt;
+  flex-shrink: 0;
+  color: #0f172a;
+}
+
+.status-hints {
+  color: #475569;
+  font-size: 8pt;
+  font-weight: normal;
+}
+
+.status-line {
+  flex-grow: 1;
+  border-bottom: 1.5px solid var(--line-color);
+  min-height: 17px;
+}
+
+/* Utredning / Lab */
+.investigation-row {
+  display: flex;
+  justify-content: space-between;
+  background: #f8fafc;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 8.5pt;
+  gap: 12px;
+}
+
+.inv-col {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px 8px;
+}
+
+.inv-lbl {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ====================================================
+   SKRIVRADER (Lättlästa och bekväma för handskrift)
+   ==================================================== */
+.writing-area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.line {
+  width: 100%;
+  height: 20px;
+  border-bottom: 1.5px solid var(--line-color);
+}
+
+/* ====================================================
+   SIDFOT
+   ==================================================== */
+.sheet-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8pt;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+  padding-top: 3px;
+  margin-top: 3px;
+}
+
+.footer-right {
+  font-weight: 600;
+}
+
+/* ====================================================
+   UTSKRIFTSANPASSNING (A4 EXAKT 1 SIDA)
+   ==================================================== */
+@page {
+  size: A4 portrait;
+  margin: 6mm 8mm 6mm 8mm;
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .page-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .a4-sheet {
+    box-shadow: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+
+  .patient-box, .cue-checklist, .cue-mini, .vitals-row, .investigation-row {
+    background: #f8fafc !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .op-badge {
+    background: #1e3a8a !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .line, .op-line, .status-line, .handwrite-line {
+    border-bottom: 1.5px solid #64748b !important;
+  }
+}
